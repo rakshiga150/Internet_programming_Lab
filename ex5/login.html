@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Online Exam Portal - Login</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: lavender;
+        }
+
+
+        .login-box {
+            width: 400px;
+
+            padding: 35px;
+
+            background: white;
+
+            border-radius: 12px;
+
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .login-box h1 {
+            text-align: center;
+
+            color: #2563eb;
+
+            margin-bottom: 10px;
+        }
+
+
+        .login-box h2 {
+            text-align: center;
+
+            color: #333;
+
+            margin-bottom: 25px;
+        }
+
+
+        .input-group {
+            margin-bottom: 18px;
+        }
+
+
+        .input-group label {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: #333;
+
+            font-weight: bold;
+        }
+
+
+        .input-group input {
+            width: 100%;
+
+            padding: 12px;
+
+            border: 1px solid #ccc;
+
+            border-radius: 6px;
+
+            font-size: 15px;
+        }
+
+
+        .input-group input:focus {
+            outline: none;
+
+            border-color: #2563eb;
+        }
+
+
+        button {
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+
+        #message {
+            text-align: center;
+
+            margin-bottom: 12px;
+
+            min-height: 20px;
+        }
+
+
+        .register-link {
+            text-align: center;
+
+            margin-top: 20px;
+
+            color: #555;
+        }
+
+
+        .register-link a {
+            color: #2563eb;
+
+            text-decoration: none;
+
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <div class="login-box">
+
+        <h1>Online Exam Portal</h1>
+
+        <h2>Student Login</h2>
+
+
+        <form id="loginForm">
+
+
+            <!-- Email -->
+
+            <div class="input-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Enter your email"
+                >
+
+            </div>
+
+
+            <!-- Password -->
+
+            <div class="input-group">
+
+                <label for="password">
+                    Password
+                </label>
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Enter your password"
+                >
+
+            </div>
+
+
+            <!-- Message -->
+
+            <p id="message"></p>
+
+
+            <!-- Login Button -->
+
+            <button type="submit">
+                Login
+            </button>
+
+
+        </form>
+
+
+        <!-- Registration Link -->
+
+        <p class="register-link">
+
+            Don't have an account?
+
+            <a href="registration.html">
+                Register
+            </a>
+
+        </p>
+
+
+    </div>
+
+
+    <script>
+
+
+        // Get login form
+
+        const loginForm = document.getElementById("loginForm");
+
+
+        // When user clicks Login
+
+        loginForm.addEventListener("submit", function(event) {
+
+
+            // Stop page refresh
+
+            event.preventDefault();
+
+
+            // Get email
+
+            const email =
+                document.getElementById("email").value.trim();
+
+
+            // Get password
+
+            const password =
+                document.getElementById("password").value.trim();
+
+
+            // Get message area
+
+            const message =
+                document.getElementById("message");
+
+
+            // Check email
+
+            if (email === "") {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "Please enter your email.";
+
+                return;
+            }
+
+
+            // Check password
+
+            if (password === "") {
+
+                message.style.color = "red";
+
+                message.textContent =
+                    "Please enter your password.";
+
+                return;
+            }
+
+
+            // Login successful
+
+            message.style.color = "green";
+
+            message.textContent =
+                "Login successful!";
+
+
+            // Move to quiz page
+
+            setTimeout(function() {
+
+                window.location.href = "quiz.html";
+
+            }, 500);
+
+
+        });
+
+
+    </script>
+
+
+</body>
+
+</html>
