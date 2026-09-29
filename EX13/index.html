@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Employee Details - AJAX</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f2f2f2;
+            margin: 0;
+        }
+
+        .header {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .container {
+            width: 95%;
+            margin: 30px auto;
+            text-align: center;
+        }
+
+        button {
+            background: #222;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-bottom: 25px;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 4px 12px #ccc;
+        }
+
+        th {
+            background: #222;
+            color: white;
+            padding: 14px;
+        }
+
+        td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f1f1;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Employee Management System</h1>
+    <p>AJAX Employee Details</p>
+</div>
+
+<div class="container">
+
+    <h2>Employee Details</h2>
+
+    <button onclick="loadEmployees()">
+        Load Employee Details
+    </button>
+
+    <div id="employeeData"></div>
+
+</div>
+
+<script>
+
+function loadEmployees() {
+
+    var xhttp = new XMLHttpRequest();
+
+    xhttp.onreadystatechange = function() {
+
+        if (this.readyState == 4 && this.status == 200) {
+
+            var xml = this.responseXML;
+
+            var employees = xml.getElementsByTagName("employee");
+
+            var table = "<table>";
+
+            table += "<tr>";
+            table += "<th>Employee ID</th>";
+            table += "<th>Name</th>";
+            table += "<th>Department</th>";
+            table += "<th>Designation</th>";
+            table += "<th>Salary</th>";
+            table += "</tr>";
+
+            for (var i = 0; i < employees.length; i++) {
+
+                table += "<tr>";
+
+                table += "<td>" +
+                    employees[i].getElementsByTagName("id")[0].textContent +
+                    "</td>";
+
+                table += "<td>" +
+                    employees[i].getElementsByTagName("name")[0].textContent +
+                    "</td>";
+
+                table += "<td>" +
+                    employees[i].getElementsByTagName("department")[0].textContent +
+                    "</td>";
+
+                table += "<td>" +
+                    employees[i].getElementsByTagName("designation")[0].textContent +
+                    "</td>";
+
+                table += "<td>₹" +
+                    employees[i].getElementsByTagName("salary")[0].textContent +
+                    "</td>";
+
+                table += "</tr>";
+            }
+
+            table += "</table>";
+
+            document.getElementById("employeeData").innerHTML = table;
+        }
+    };
+
+    xhttp.open("GET", "get_employees.php", true);
+
+    xhttp.send();
+}
+
+</script>
+
+</body>
+</html>

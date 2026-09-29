@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<employees>
+
+    <employee>
+        <id>101</id>
+        <name>Arun Kumar</name>
+        <department>Software Development</department>
+        <designation>Software Developer</designation>
+        <salary>45000</salary>
+    </employee>
+
+    <employee>
+        <id>102</id>
+        <name>Priya Sharma</name>
+        <department>Human Resources</department>
+        <designation>HR Executive</designation>
+        <salary>40000</salary>
+    </employee>
+
+    <employee>
+        <id>103</id>
+        <name>Rahul Raj</name>
+        <department>Finance</department>
+        <designation>Accountant</designation>
+        <salary>42000</salary>
+    </employee>
+
+    <employee>
+        <id>104</id>
+        <name>Divya S</name>
+        <department>Marketing</department>
+        <designation>Marketing Executive</designation>
+        <salary>38000</salary>
+    </employee>
+
+    <employee>
+        <id>105</id>
+        <name>Karthik M</name>
+        <department>IT Support</department>
+        <designation>System Administrator</designation>
+        <salary>48000</salary>
+    </employee>
+
+    <employee>
+        <id>106</id>
+        <name>Meena R</name>
+        <department>Software Development</department>
+        <designation>Web Developer</designation>
+        <salary>44000</salary>
+    </employee>
+
+    <employee>
+        <id>107</id>
+        <name>Vijay Kumar</name>
+        <department>Testing</department>
+        <designation>Software Tester</designation>
+        <salary>41000</salary>
+    </employee>
+
+    <employee>
+        <id>108</id>
+        <name>Harini P</name>
+        <department>Design</department>
+        <designation>UI Designer</designation>
+        <salary>39000</salary>
+    </employee>
+
+    <employee>
+        <id>109</id>
+        <name>Sanjay K</name>
+        <department>Software Development</department>
+        <designation>Backend Developer</designation>
+        <salary>46000</salary>
+    </employee>
+
+    <employee>
+        <id>110</id>
+        <name>Swetha R</name>
+        <department>Customer Support</department>
+        <designation>Support Executive</designation>
+        <salary>35000</salary>
+    </employee>
+
+</employees>

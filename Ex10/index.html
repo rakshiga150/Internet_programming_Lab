@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Job Seeker Registration</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #eef2f7;
+            margin: 0;
+        }
+
+        .header {
+            background: #1f3c88;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        h2 {
+            text-align: center;
+            color: #1f3c88;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 12px;
+            background: #1f3c88;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #162d66;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Job Portal</h1>
+    <p>Job Seeker Registration</p>
+</div>
+
+<div class="container">
+
+    <h2>Register Now</h2>
+
+    <form action="validate.php" method="post">
+
+        <label>Full Name</label>
+        <input type="text" name="name" required>
+
+        <label>Email</label>
+        <input type="text" name="email" required>
+
+        <label>Phone Number</label>
+        <input type="text" name="phone" required>
+
+        <label>Password</label>
+        <input type="password" name="password" required>
+
+        <label>Credit Card Number</label>
+        <input type="text" name="creditcard" maxlength="16"
+               placeholder="Enter 16 digit card number" required>
+
+        <label>Job Role</label>
+        <select name="jobrole" required>
+            <option value="">Select Job Role</option>
+            <option>Software Developer</option>
+            <option>Web Developer</option>
+            <option>Data Analyst</option>
+            <option>Software Tester</option>
+        </select>
+
+        <label>Skills</label>
+        <input type="text" name="skills" required>
+
+        <button type="submit">Register</button>
+
+    </form>
+
+</div>
+
+</body>
+</html>
